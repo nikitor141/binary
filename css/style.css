@@ -230,7 +230,7 @@ body {
 .nav__item:hover {
   color: #ada074;
 }
-.nav__item a:visited {
+.nav__item a:visited, .nav__item a {
   color: inherit;
 }
 
