@@ -121,9 +121,29 @@ body {
 
 .hello-block {
   width: 100%;
-  background: url("../img/background/bg.jpg") no-repeat;
+  min-height: 100vh;
+  background: url("../img/background/bg.jpg") no-repeat center/cover;
   background-position: center;
   padding: 133px 0 153px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.hello-block__body {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .hello-block__logo {
@@ -218,8 +238,26 @@ body {
   margin: 0 45px 0 0;
 }
 
+.nav__item {
+  position: relative;
+}
+.nav__item::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: -23px;
+  height: 1px;
+  background: #ada074;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
 .nav__item:hover {
   color: #ada074;
+}
+.nav__item:hover::after {
+  left: 0;
+  right: 0;
 }
 .nav__item a:visited, .nav__item a {
   color: inherit;
@@ -340,7 +378,7 @@ body {
 }
 
 .partners {
-  background: url("../img/background/bg-mini.jpg") no-repeat;
+  background: url("../img/background/bg-mini.jpg") no-repeat center/cover;
   background-position: center;
   height: 389px;
   padding: 100px 0 104px 0;
@@ -463,8 +501,8 @@ body {
   margin: 0 12px 0 0;
 }
 
-.contact__facebook {
-  background: url("../img/icons/facebook-icon.png") center no-repeat;
+.contact__github {
+  background: url("../img/icons/github.png") center/15px no-repeat;
 }
 
 .contact__in {
@@ -502,6 +540,9 @@ body {
   text-transform: none;
 }
 
+.footer__item::after {
+  height: 0;
+}
 .footer__item:not(:last-child) {
   margin: 0 30px 0 0;
 }
