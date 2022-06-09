@@ -1,1 +1,7 @@
 /prepros.config
+img/.DS_Store
+img/background/.DS_Store
+
+/#source/.DS_Store
+.DS_Store
+img/icons/.DS_Store

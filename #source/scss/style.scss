@@ -1,24 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
-@font-face {
-	font-family: 'MyriadPro';
-	src: url('../fonts/MyriadPro-Regular.eot');
-	src: local('☺'), url('../fonts/MyriadPro-Regular.woff') format('woff'), url('../fonts/MyriadPro-Regular.ttf') format('truetype'), url('../fonts/MyriadPro-Regular.svg') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
+@import "fonts.scss";
 @import "reset.scss";
+
 body {
-   font-family: lato, sans-serif;
+	font-family: lato, sans-serif;
 }
+
+* {
+	img {
+		max-width: 100%;
+		height: auto;
+		object-fit: contain;
+	}
+}
+
 // bem-blocks --------------------------------------------------------------
 .content {
 	max-width: 900px;
 	margin: 0 auto;
 }
+
 .logo {
 	display: flex;
 	justify-content: center;
 }
+
 .title {
 	font-size: 34px;
 	line-height: 40px;
@@ -27,43 +32,48 @@ body {
 	position: relative;
 	letter-spacing: .16em;
 	font-weight: 700;
+
 	&::after {
 		content: "";
 		position: absolute;
 		left: 50%;
+		transform: translateX(-50%);
 		bottom: 0;
 		width: 82px;
 		height: 1px;
 		background: black;
-		margin: 0 0 0 -44px;
 	}
 }
+
 // hello-block --------------------------------------------------------------
 .hello-block {
-	width: 100%; 
+	width: 100%;
 	min-height: 100vh;
-	background: url('../img/background/bg.jpg') no-repeat center/cover;
-	background-position: center;
+	background: #5e6f91 url('../img/background/bg.webp') no-repeat center/cover;
 	// padding: 15vh 0 14vh 0;
 	padding: 133px 0 153px 0;
 	display: flex;
 }
+
 .hello-block__body {
 	flex: 1 1 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
+
 .hello-block__logo {
 	margin: 0 0 150px 0;
 }
+
 .hello-block__title {
 	font-weight: 900;
 	color: white;
-	
+
 	// position: relative;
 	padding: 0 0 47px 0;
 	margin: 0 0 226px 0;
+
 	span {
 		display: inline-block;
 		font-family: lato, sans-serif;
@@ -73,19 +83,19 @@ body {
 		text-transform: none;
 	}
 }
+
 .title_big-after {
 	&::after {
 		width: 106px;
 		height: 2px;
 		background: white;
-		margin: 0 0 0 -53px;
 	}
 }
+
 .link {
 	display: block;
-	width: 182px;
-	height: 47px;
 	margin: 0 auto;
+	padding: 0 41px;
 	text-transform: uppercase;
 	font-size: 16px;
 	line-height: 45px;
@@ -93,40 +103,47 @@ body {
 	text-align: center;
 
 }
+
 .hello-block__link {
 	border: 1px solid white;
 	color: white;
 	position: relative;
+
 	&:visited {
 		color: white;
 	}
+
 	&::after {
 		content: "";
 		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
 		width: 17px;
 		height: 10px;
 		background: url('../img/icons/Arrow-down.png') no-repeat;
-		left: 50%;
 		bottom: -75px;
-		margin: 0 0 0 -8px;
 	}
 }
+
 //header + nav --------------------------------------------------------------
 .header {
 	height: 60px;
 	border-bottom: 1px solid #f2f2f2;
 }
+
 .nav {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
 }
+
 .header__nav {
 	height: 100%;
 }
-.header__nav-list {
-}
+
+.header__nav-list {}
+
 .nav__list {
 	font-size: 15px;
 	font-weight: 700;
@@ -134,13 +151,16 @@ body {
 	display: flex;
 	text-transform: uppercase;
 }
+
 .header__item {
-	&:not(:last-child){
+	&:not(:last-child) {
 		margin: 0 45px 0 0;
 	}
 }
+
 .nav__item {
 	position: relative;
+
 	&::after {
 		content: '';
 		position: absolute;
@@ -151,35 +171,44 @@ body {
 		background: #ada074;
 		transition: .4s;
 	}
+
 	&:hover {
 		color: #ada074;
+
 		&::after {
 			left: 0;
 			right: 0;
 		}
 	}
-	a:visited, a {
+
+	a:visited,
+	a {
 		color: inherit;
 	}
 }
+
 // about --------------------------------------------------------------
 .about {
 	padding: 130px 0 95px 0;
 }
+
 .about__body {}
 
 .about__top {
 	max-width: 688px;
 	margin: 0 auto 70px;
 }
+
 .about__title {
 	padding: 0 0 35px 0;
 	margin: 0 0 35px 0;
 	// letter-spacing: 8px;
 }
+
 .title_lts {
 	letter-spacing: .26em;
 }
+
 .about__subtitle {
 	color: #868585;
 	font-weight: 300;
@@ -190,13 +219,16 @@ body {
 .about__bottom {
 	display: flex;
 }
+
 .about__card {
 	width: 286px;
 	text-align: center;
-	&:not(:last-child){
+
+	&:not(:last-child) {
 		margin: 0 21px 0 0;
 	}
 }
+
 .about__image {
 	width: 92px;
 	height: 92px;
@@ -207,6 +239,7 @@ body {
 	justify-content: center;
 	align-items: center;
 }
+
 .about__card-title {
 	font-size: 22px;
 	letter-spacing: .16em;
@@ -218,59 +251,79 @@ body {
 	line-height: 26px;
 	font-weight: 300;
 }
+
 // portfolio--------------------------------------------------------------
 .portfolio {
 	background: #f3f3f3;
 	padding: 107px 0 62px 0;
 }
+
 .portfolio__body {}
+
 .portfolio__title {
 	padding: 0 0 40px 0;
 	margin: 0 0 50px 0;
 }
+
 .portfolio__nav {
 	margin: 0 0 138px 0;
 }
 
 .portfolio__nav-item {
-	&:not(:last-child){
+	&:not(:last-child) {
 		margin: 0 50px 0 0;
 	}
 }
-.grid{}
-.portfolio__grid{
+
+.grid {}
+
+.portfolio__grid {
 	margin: 0 -103px 64px;
 	display: flex;
 }
+
 .grid__column {
-	&:not(:last-child){
+	&:not(:last-child) {
 		margin: 0 30px 0 0;
 	}
 }
+
 .grid__img-template {
+	display: block;
+
 	width: 538px;
 	height: 365px;
 	background: #eaeaea;
+
+	img {
+		height: 100%;
+		object-fit: cover;
+	}
+
 	&:not(:last-child) {
 		margin: 0 0 16px 0;
 	}
 }
+
 .portfolio__link {
 	border: 1px solid black;
 	color: black;
+
 	&:visited {
 		color: black;
 	}
 }
+
 //partners ---------------------------------------------------------
 
 .partners {
-	background: url('../img/background/bg-mini.jpg') no-repeat center/cover;
-	background-position: center;
-	height: 389px;
+	background: #5e6f91 url('../img/background/bg-mini.webp') no-repeat center/cover;
+	min-height: 389px;
 	padding: 100px 0 104px 0;
 }
+
 .partners__body {}
+
 .partners__title {
 	color: white;
 	font-size: 30px;
@@ -279,21 +332,26 @@ body {
 	text-align: center;
 	margin: 0 0 90px 0;
 }
+
 .partners__row {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
+
 .partners__image {
-	&:not(:last-child){
+	&:not(:last-child) {
 		margin: 0 100px 0 0;
 	}
 }
+
 //contact --------------------------------------------------------------
 .contact {
 	padding: 183px 0 102px 0;
 }
+
 .contact__body {}
+
 .contact__title {
 	padding: 0 0 46px 0;
 	margin: 0 0 120px 0;
@@ -310,20 +368,24 @@ body {
 	margin: 0 83px 0 0;
 	padding: 7px 0 0 0;
 }
+
 .form__item {
 	&:nth-child(1) {
 		margin: 0 60px 75px 0;
 	}
+
 	&:nth-child(2) {
 		margin: 0 0 75px 0;
 	}
 }
+
 .form__title {
 	font-weight: 700;
 	letter-spacing: .06em;
 	text-transform: uppercase;
 	margin: 0 0 18px 0;
 }
+
 .form__input {
 	width: 161px;
 	height: 35px;
@@ -331,6 +393,7 @@ body {
 	border-top: 1px solid black;
 	background: #f8f7f7;
 }
+
 .form__input_big {
 	width: 383px;
 	height: 118px;
@@ -350,54 +413,67 @@ body {
 }
 
 .contact__find-me {}
+
 .contact__text {
 	max-width: 252px;
 	font-weight: 300;
 	line-height: 26px;
 	margin: 0 0 35px 0;
 }
+
 .contact__name {
 	font-weight: 700;
 	margin: 0 0 25px 0;
 }
+
 .contact__social {
 	margin: 0 0 15px 0;
+
 	a {
 		display: inline-block;
 		width: 29px;
 		height: 29px;
 		border-radius: 50%;
 		border: 2px solid #1e1e1e;
-		&:not(:last-child){
+
+		&:not(:last-child) {
 			margin: 0 12px 0 0;
 		}
 	}
 }
+
 .contact__github {
 	background: url('../img/icons/github.png') center/15px no-repeat;
 }
+
 .contact__in {
 	background: url('../img/icons/in-icon.png') 55% 45% no-repeat;
 }
+
 .contact__email {
 	span {
 		font-weight: 300;
 	}
+
 	a {
 		font-weight: 700;
 		color: black;
+
 		&:visited {
 			color: black;
 		}
 	}
 }
+
 // footer ---------------------------------------------------------
 
 .footer {
 	background: #3c3c3c;
 	padding: 48px 0 49px 0;
 }
+
 .footer__body {}
+
 .footer__logo {
 	margin: 0 0 41px 0;
 }
@@ -405,20 +481,24 @@ body {
 .footer__nav {
 	margin: 0 0 34px 0;
 }
+
 .footer__nav-list {
 	color: #a4a4a4;
 	font-size: 14px;
 	font-weight: normal;
 	text-transform: none;
 }
+
 .footer__item {
 	&::after {
 		height: 0;
 	}
-	&:not(:last-child){
+
+	&:not(:last-child) {
 		margin: 0 30px 0 0;
 	}
 }
+
 .copyright {
 	font-family: MyriadPro, sans-serif;
 	color: #6c6c6c;
@@ -430,23 +510,29 @@ body {
 	max-width: 1251px;
 	padding: 100px 0 78px 0;
 }
+
 .row {}
+
 .projects__row {
 	display: flex;
+
 	&:not(:last-child) {
 		margin: 0 0 30px 0;
 	}
 }
+
 .row__screen {
 	max-width: 814px;
 	margin: 0 16px 0 0;
 }
+
 .row__about {
 	max-width: 421px;
 	// height: 100%;
 	padding: 54px 50px 35px 37px;
 	background: #f2f2f2;
 }
+
 .row__title {
 	font-size: 24px;
 	font-weight: 700;
@@ -454,17 +540,21 @@ body {
 	letter-spacing: .16em;
 	margin: 0 0 30px 0;
 }
+
 .row__text {
 	color: #595757;
 	font-weight: 300;
 	line-height: 26px;
-	&:not(p:last-of-type){
+
+	&:not(p:last-of-type) {
 		margin: 0 0 25px 0;
 	}
-	&:last-of-type{
+
+	&:last-of-type {
 		margin: 0 0 40px 0;
 	}
 }
+
 .row__link {
 	margin: 0;
 	letter-spacing: .06em;
@@ -472,14 +562,3 @@ body {
 	color: #242424;
 	border: 1px solid #232323;
 }
-
-
-
-
-
-
-//todo
-// все блок__елемент блок, где блок__елемент настраивает не расположение, а вид, заменить на блок_модификатор
-// у title:after почему-то margin не -41, а -44
-// contact__input шрифт и размер
-// обернуть в main все блоки от header до footer (или подумать, ведь есть блок hello)
