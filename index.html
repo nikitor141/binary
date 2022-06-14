@@ -5,7 +5,13 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=1103">
-   <link rel="shortcut icon" href="img/icons/favicon.ico" type="image/x-icon">
+   <link type="image/x-icon" rel="shortcut icon" href="favicon.ico">
+   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+   <link rel="manifest" href="site.webmanifest">
+   <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+   <meta name="msapplication-config" content="browserconfig.xml">
    <link rel="stylesheet" href="css/style.css">
    <title>Binary</title>
 </head>
@@ -21,22 +27,22 @@
                logo,
                website</span>
          </h2>
-         <a href="#" class="hello-block__link link">Read more</a>
+         <a href="#more" class="hello-block__link link">Read more</a>
       </div>
    </section>
-   <header class="header">
+   <header class="header" id="more">
       <nav class="header__nav nav">
          <ul class="header__nav-list nav__list">
             <li class="header__item nav__item"><a href="#">Home</a></li>
-            <li class="header__item nav__item"><a href="#">About us</a></li>
-            <li class="header__item nav__item"><a href="portfolio.html">Portfolio</a></li>
-            <li class="header__item nav__item"><a href="#">Contact</a></li>
+            <li class="header__item nav__item"><a href="#about">About us</a></li>
+            <li class="header__item nav__item"><a href="#portfolio">Portfolio</a></li>
+            <li class="header__item nav__item"><a href="#contact">Contact</a></li>
          </ul>
       </nav>
    </header>
    <main class="main">
 
-      <section class="about">
+      <section class="about" id="about">
          <div class="about__body content">
             <div class="about__top">
                <h2 class="about__title title title_lts">ABOUT</h2>
@@ -77,7 +83,7 @@
             </div>
          </div>
       </section>
-      <section class="portfolio">
+      <section class="portfolio" id="portfolio">
          <div class="portfolio__body content">
             <h2 class="portfolio__title title">Portfolio</h2>
             <nav class="portfolio__nav nav">
@@ -131,7 +137,7 @@
                   </a>
                </div>
             </div>
-            <a href="#" class="portfolio__link link">Read more</a>
+            <a href="portfolio.html" class="portfolio__link link">Read more</a>
          </div>
       </section>
       <section class="partners">
@@ -153,7 +159,7 @@
             </div>
          </div>
       </section>
-      <section class="contact">
+      <section class="contact" id="contact">
          <div class="contact__body content">
             <h2 class="contact__title title">Contact</h2>
             <div class="contact__bottom">
